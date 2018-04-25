@@ -1,14 +1,9 @@
+const removals = require('../helpers/bindingsRemoval.js');
+
 const visitor = () => {
 
   return {
-    visitor: {
-      AssignmentExpression (path) {
-        path.remove();
-      },
-      ArrayExpression (path) {
-        path.remove();
-      }
-    }
+    visitor: Object.assign({}, removals.removeUnusedBindings())
   };
 };
 

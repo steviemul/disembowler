@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run":"./index.js",
+    "run": "./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,6 +14,7 @@
     "babel-traverse": "^6.26.0",
     "babel-types": "^6.26.0",
     "escodegen": "^1.9.1",
+    "eslint": "^4.19.1",
     "esprima": "^4.0.0",
     "fs-extra": "^5.0.0",
     "glob": "^7.1.2",

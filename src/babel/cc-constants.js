@@ -1,4 +1,7 @@
 
+const config = require('../../rules/cc-constants.json');
+const unused = config.unused;
+
 const visitor = (babel) => {
   const t = babel.types;
 
@@ -12,7 +15,7 @@ const visitor = (babel) => {
         if  (t.isAssignmentExpression(expression)) {
 
           if (expression.left && expression.left.object && expression.left.object.name === 'CCConstants') {
-            if (expression.left.property.name === 'ENDPOINT_GET_CONTAINER_CONFIGURATION') {
+            if (unused.includes(expression.left.property.name)) {
               path.remove();
             }
           }

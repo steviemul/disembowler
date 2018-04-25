@@ -3,6 +3,8 @@ const fs = require('fs-extra');
 
 const disembowl = require('./src/jobs/disembowl.js');
 const bundle = require('./src/jobs/bundle.js');
+const scan = require('./src/jobs/scanner.js');
+
 const getOptions = require('./src/utils/options.js');
 
 const usage = () => {
@@ -28,6 +30,8 @@ if (options.target) {
 
   const APP_ROOT = CC_ROOT + '/commerce/Dynamo/Client/Store/web/store.war/';
   const REQUIRE_JS_CONFIG = CC_ROOT + '/commerce/clientutils/config/minify.build.js';
+
+  scan(CC_ROOT, APP_ROOT);
 
   fs.emptyDirSync(OUTPUT_DIR);
 

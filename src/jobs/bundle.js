@@ -12,7 +12,7 @@ const optimize = (requireConfig, outputDir) => {
   config.dir = outputDir + '/bundle';
   config.baseUrl = './';
   config.skipDirOptimize = true;
-  config.generateSourceMaps = false;
+  config.generateSourceMaps = true;
   config.logLevel = 1;
 
   fs.ensureDirSync(outputDir + '/bundle');

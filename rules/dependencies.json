@@ -1,0 +1,23 @@
+{
+  "remove":[
+    "jqueryui",
+    "hasher",
+    "bootstrapDatePicker",
+    "bootstrapTimePicker",
+    "chosen",
+    "trafficCop",
+    "spectrumColorPicker",
+    "tagsInput",
+    "ojs/ojcore",
+    "ojs/ojvalidation",
+    "ojdnd",
+    "ojs",
+    "ojL10n",
+    "ojtranslations",
+    "ccPreviewBar",
+    "ojs/ojknockout", 
+    "ojs/ojcomponents",
+    "numberFormatHelper",
+    "dateTimeUtils"
+  ]
+}

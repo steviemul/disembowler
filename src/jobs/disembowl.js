@@ -3,9 +3,11 @@ const babel = require('babel-core');
 const glob = require('glob');
 const path = require('path');
 const fs = require('fs-extra');
+const lint = require('./lint.js');
 
 // these are our babel plugin
 const comments = require('../babel/comments.js');
+const dependencies = require('../babel/dependencies.js');
 
 const IGNORE_PATHS = [
   'js/oraclejet',
@@ -62,7 +64,7 @@ const processFile = (jsFile, appRoot, outputDir, options, total, index) => {
     catch (e) {}
   }
 
-  const plugins = [comments];
+  const plugins = [comments, dependencies];
 
   if (libPlugin) {
     plugins.push(libPlugin);
@@ -74,7 +76,7 @@ const processFile = (jsFile, appRoot, outputDir, options, total, index) => {
 
     // output our AST and transformed code
   fs.writeFileSync(outputDir + '/ast/' + relativePath + libKey + '.ast.json', JSON.stringify(result.ast, null, 2));
-  fs.writeFileSync(outputDir + '/code/' + relativePath + libKey + '.js', result.code);
+  fs.writeFileSync(outputDir + '/code/' + relativePath + libKey + '.js', lint(result.code));
 
 };
 
